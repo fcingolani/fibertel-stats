@@ -1,10 +1,12 @@
 language: go
+
 go:
 - '1.10'
+
 branches:
   only:
   - master
-tags: true
+
 deploy:
   provider: releases
   api_key:
@@ -16,5 +18,7 @@ deploy:
   - release/fibertel-stats-darwin-386
   - release/fibertel-stats-windows-amd64.exe
   - release/fibertel-stats-windows-386.exe
+  skip_cleanup: true
   on:
     repo: fcingolani/fibertel-stats
+    tags: true
