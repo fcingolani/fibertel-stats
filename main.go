@@ -20,7 +20,7 @@ func main() {
 
 	logCurrentValues()
 
-	for _ = range time.Tick(time.Second * 15) {
+	for _ = range time.Tick(time.Minute) {
 		logCurrentValues()
 	}
 
