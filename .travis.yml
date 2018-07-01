@@ -1,11 +1,21 @@
-
 language: go
-
 go:
-- "1.10"
-
+- '1.10'
 branches:
   only:
   - master
-
 tags: true
+deploy:
+  provider: releases
+  api_key:
+    secure: V5sUbEm9RPDezl+0OcZHDdnPcsLW9XXVJtuPQn4iZ6yU+AVrFg8oWfxQQY+h2cOgVyOwx3QYkWnlg+R7GikmotgZevifI28Y5bovwM2Hw93yO4U3b9IjwkWvnYgKnXaIGTcXkqEjBC0G99ISrqrlsSUsOpFHzYK5KMc4ntWPXJZWtIEHp9pUM+usEFyQaxzlmJNgWIDG4mfaQc0yFkvOaEXmXZ2BN3thkvHhqV5s2UViIJ0z5gdo1gKemSBl7NNA5ICfEgJpt09DKKViwGgxNMSjTvKyHfhD9J/CZGZ6CkTWfOielZxKtBICeMK1LMg7LydPEdSKLxWuE1V7Vb2neJoezz63LIdPYL7hm+LUzn62pmZrlq+Ycu1c2UJuYdI21/K53M6GcvVRI9cqGyDz3O6EZnc2PlALbDRlufdLcsZYKPaJZNl0Jck6n80E7+eWcwzko9H0tQ82/vvwGzlhN4y1tSOHlcBmk7WYq9XzCi7p/4XLbqFkXV6Z4Ln5/iqgRwK9/WE+2WXI+ywpSPY6Mj7YagvSaMFmYkMoDe9I1wzlQDNEQm3emo15LzKaCAqD/V8i/KGn2WbL5PBRAiD0reCtIhfRD6K9NttSijJ4bXnff830X7keeWLCRGULRgimXGe9V33lZnNIp7UzQWZA4bApdLkUjbl45R4FdjVcfxQ=
+  file:
+  - release/fibertel-stats-linux-amd64
+  - release/fibertel-stats-linux-386
+  - release/fibertel-stats-darwin-amd64
+  - release/fibertel-stats-darwin-386
+  - release/fibertel-stats-windows-amd64.exe
+  - release/fibertel-stats-windows-386.exe
+  skip_cleanup: true
+  on:
+    repo: fcingolani/fibertel-stats
