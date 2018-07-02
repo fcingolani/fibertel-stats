@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -14,7 +15,7 @@ import (
 func main() {
 
 	log.SetOutput(&lumberjack.Logger{
-		Filename: "./fibertel.log",
+		Filename: "./fibertel-stats.log",
 		MaxSize:  50,
 	})
 
@@ -31,9 +32,11 @@ func logCurrentValues() {
 	values, err := getCurrentValues()
 
 	if err != nil {
-		log.Println(err.Error())
+		log.Println("✕", err.Error())
+		fmt.Print("✕")
 	} else {
-		log.Println(values)
+		log.Println("✓", values)
+		fmt.Print("✓")
 	}
 
 }
