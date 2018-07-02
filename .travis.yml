@@ -11,14 +11,8 @@ deploy:
   provider: releases
   api_key:
     secure: uMqRzowjfQ+lqtxtggPqsCypBcytwOBCSpNqxW3XRhEKcFEvPsYZ9XMB7hDAyuUu4ifVo3hDryJ9b8uVtOHuuDRK4qEkfALET0sIP8tks3iTvXs4stuvWuuPhHPW5H3CrgoaInqjAhYoq3IpO8PbxU7RCmYudpOjEcIribFxrepu/bpbUEn2VmwLADwwS1FjJtgPd8mRKQ35ICKgjQzgm4C/aPGMCXbJWoI3pUdHzf6MGSbVgB/boXs1qmwF/6HULCaSVnewP5tyhZM8mgjtvZFAfsHyDAHAySylISB4rEtJvov3S7ykt4/QYUkNZ0U4wgQf5alf8mkKc0dAJg7D4+RCilhVVVhhBbBlxMer7PQjk9ER0xTwC9Og/aOOP+1emPazYhUZLe5C4748chVWXIp93Qu4q5cW/pOuj+IzfuvLRnd9JoFEW+EXAoKJQ9zbeqj3UXi/+LtaAXBGgfm0SgZ5VonjYU5mj0dJ5tPpNXRvUFRVboonHJsY515AWvHCKVnMilf0UggxFLVNO83aysVR8xS3eJN7MBXF11epNCZe/ulsnX380vi3FPoHyPhgoR/mz0LVICPnlGQdcIhxXKHlLBtb6LgnczjbSstRubKECmM1JZhQS72aoCKGOP0r63oxLE5OAmO8RP98tke24ZqGziiHthO1g12mre4DrGY=
-  file:
-  - release/fibertel-stats-linux-amd64
-  - release/fibertel-stats-linux-386
-  - release/fibertel-stats-darwin-amd64
-  - release/fibertel-stats-darwin-386
-  - release/fibertel-stats-windows-amd64.exe
-  - release/fibertel-stats-windows-386.exe
+  file_glob: true
+  file: release/*
   skip_cleanup: true
   on:
     repo: fcingolani/fibertel-stats
-    tags: true
