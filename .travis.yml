@@ -16,4 +16,3 @@ deploy:
   skip_cleanup: true
   on:
     repo: fcingolani/fibertel-stats
-    tags: true
